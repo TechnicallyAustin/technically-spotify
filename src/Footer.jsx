@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Footer() {
     return (
-      <Footer>
-        <article id="footerLinks">
+      <footer>
+        <div id="footerLinks">
           <ul>
             <li>
               <p>Company</p>
@@ -36,9 +36,9 @@ export default function Footer() {
             <li>Twitter</li>
             <li>Github</li>
           </ul>
-        </article>
+        </div>
 
-        <article id="legalLinks">
+        <div id="legalLinks">
           <ul>
             <li>Legal</li>
             <li>Privacy Center</li>
@@ -49,15 +49,15 @@ export default function Footer() {
             <li>Notice at Collection</li>
             <li>Your Privacy Choices</li>
           </ul>
-        </article>
+        </div>
 
-        <article id="copyright">
+        <div id="copyright">
             <p>Copyright Info</p>
-        </article>
+        </div>
 
-        <article id="footerLanguage">
+        <div id="footerLanguage">
             <button id="languageSelector">English</button>
-        </article>
-      </Footer>
+        </div>
+      </footer>
     );
 }

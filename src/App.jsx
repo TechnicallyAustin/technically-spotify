@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 export default function App() {
     return (
-        <div id="app" className='w-screen'>
+        <div id="app" className='w-screen bg-page-color text-page-white'>
             <Header />
             <MainComponent />
             <Footer />

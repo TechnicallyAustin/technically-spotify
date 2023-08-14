@@ -12,8 +12,8 @@ export default {
     colors: {
       "page-black": "#000000",
       "page-white": "#FFFFFF",
-      "page-color": "#",
-      "text-color": "#008080",
+      "page-color": "#1b0428",
+      "text-color": "#ee82ee",
       "text-white": "#FFFFFF",
       "text-neon": "",
       "button-color": "",

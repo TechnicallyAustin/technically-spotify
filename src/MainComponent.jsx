@@ -1,47 +1,55 @@
 import React from 'react'
+import MusicCard from './MusicCard';
+import FocusCard from './FocusCard';
+import AudioBookCard from './AudioBookCard';
 
 export default function MainComponent() {
     return (
-      <main className="w-full px-4  py-8">
-        <section id="playlists" className="w-full flex flex-col gap-2">
+      <main className="w-full relative top-6 block p-4 py-16 gap-4 flex flex-col justify-between text-text-color">
+        <section id="playlists" className="w-full flex flex-col py-2">
           <header>
-            <h2>Technically Spotify Playlists</h2>
+            <h2>Technically Playlists</h2>
           </header>
 
-          <section id="playlistContainer" className=" w-full flex gap-4 p-2 overflow-x-auto">
+          
 
-            <article id="musicCard" className="h-40 w-full">
-              <figure className="w-full flex">
-                <figcaption className="w-full">
-                  <p className="w-full p-2">Fig Caption</p>
-                </figcaption>
-              </figure>
-            </article>
-
+          <section
+            id="playlistContainer"
+            className=" w-screen h-48  flex justify-start gap-3 py-4 overflow-x-scroll no-scrollbar"
+          >
+            <MusicCard />
+            <MusicCard />
+            <MusicCard />
+            <MusicCard />
           </section>
         </section>
 
-        <section id="focus" className="w-full flex flex-col gap-2">
+        <section id="focus" className="w-full flex flex-col py-2">
           <header>
-            <h2>Technically Spotify Focus</h2>
+            <h2>Technically Focus</h2>
           </header>
 
-          <section id="focusContainer" className="flex gap-4 p-2">
-            <div className="p-20"></div>
-            <div className="p-20"></div>
-            <div className="p-20"></div>
+          <section
+            id="focusContainer"
+            className=" w-screen h-48 flex justify-start gap-3 p-2 py-4 overflow-x-scroll no-scrollbar"
+          >
+            <FocusCard />
+            <FocusCard />
+            <FocusCard />
+            <FocusCard />
           </section>
         </section>
 
-        <section id="audioBooks" className="w-full flex flex-col gap-2">
+        <section id="audioBooks" className="w-full  flex flex-col py-2">
           <header>
-            <h2>Technically Spotify AudioBooks</h2>
+            <h2>Technically AudioBooks</h2>
           </header>
 
-          <section id="audiobookContainer" className="flex gap-4 p-2">
-            <div className="p-20"></div>
-            <div className="p-20"></div>
-            <div className="p-20"></div>
+          <section id="audiobookContainer" className="w-screen h-48 flex gap-3 py-4 justify-start overflow-x-scroll no-scrollbar">
+            <AudioBookCard />
+            <AudioBookCard />
+            <AudioBookCard />
+            <AudioBookCard />
           </section>
         </section>
       </main>

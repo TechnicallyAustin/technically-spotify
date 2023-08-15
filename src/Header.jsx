@@ -33,7 +33,7 @@ export default function Header() {
                     <SearchIcon />
                 </div>
                 <div id="button" className='flex justify-center items-center w-4/6 rounded-xl p-2 px-4'>
-                    <button className='border rounded-2xl px-6 py-2 text-sm'>OPEN APP</button>
+                    <button className='border bg-text-color text-page-color rounded-2xl px-6 py-2 text-sm'>OPEN APP</button>
                 </div>
                 <div id="menuIcon" className=' flex justify-center items-center p-2' onClick={MenuToggle}>
                     <MenuIcon />

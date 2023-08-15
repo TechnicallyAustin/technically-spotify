@@ -5,7 +5,7 @@ import Focus from './components/focus/Focus';
 
 export default function MainComponent() {
     return (
-      <main className="w-full h-screen relative top-0 block p-4 py-16  flex flex-col justify-center text-text-color">
+      <main className="w-full h-screen relative top-0 block p-4 py-16 gap-6  flex flex-col justify-center text-text-color">
         <Playlist />
         <Focus />
         <AudioBooks />

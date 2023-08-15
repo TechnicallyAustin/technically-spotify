@@ -3,7 +3,7 @@ import MusicCard from './MusicCard';
 
 export default function Playlist() {
     return (
-      <section id="playlists" className=" w-full flex flex-col py-2 gap-2">
+      <section id="playlists" className=" w-full flex flex-col gap-2">
         <header className='text-page-white'>
           <h2>Technically Playlists</h2>
         </header>

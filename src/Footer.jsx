@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
     return (
-      <footer className="w-full h-screen relative block p-4 py-14 border-t border-text-color">
+      <footer className="w-full h-screen relative block p-4 py-16 border-t border-text-color">
      
           <div id="footerLinks" className='flex flex-col justify-around gap-8 py-6'>
             <ul id="company" className='py-2 flex flex-col gap-2 text-text-color'>

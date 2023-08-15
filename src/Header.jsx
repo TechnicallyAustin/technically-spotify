@@ -9,7 +9,7 @@ export default function Header() {
                 <div>T. Spotify</div>
             </div>
 
-            <nav className="flex justify-around items-cener gap-2">
+            <nav className="flex justify-around items-cener">
                 <div id="searchIcon" className='p-2'>
                     <SearchIcon />
                 </div>

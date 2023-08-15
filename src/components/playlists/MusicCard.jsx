@@ -9,7 +9,7 @@ export default function MusicCard() {
       <figure className="w-full flex flex-col justify-between items-center rounded gap-2">
         <img src="" alt="" id="" className="w-full h-full aspect-square " />
         <figcaption className="w-full flex justify-start items-end">
-          <p className="">Fig Caption</p>
+          <p className="text-sm">Fig Caption</p>
         </figcaption>
       </figure>
     </article>

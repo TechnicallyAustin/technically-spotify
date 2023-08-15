@@ -4,8 +4,8 @@ export default function Footer() {
     return (
       <footer className="w-full h-screen relative top-10 block p-4 py-10 ">
      
-          <div id="footerLinks" className='flex flex-col justify-around gap-4 py-4'>
-            <ul id="company" className='py-2 flex flex-col gap-2 text-text-color'>
+          <div id="footerLinks" className='flex flex-col justify-around gap-8 py-10'>
+            <ul id="company" className='py-2 flex flex-col gap-2 text-text-color py-2'>
               <li>
                 <p className="font-bold text-page-white">Company</p>
               </li>

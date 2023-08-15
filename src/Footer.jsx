@@ -39,7 +39,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div id="legalLinks" className="w-full flex flex-col justify-around items-start gap-6 py-6 text-xs">
+          <div id="legalLinks" className="w-full flex flex-col justify-around items-start gap-6 py-6 text-xs border-t border-text-color">
 
             <ul  id="legal" className='flex flex-wrap justify-start items-center gap-2'>
               <li className='pr-2 text-xs'>Legal</li>

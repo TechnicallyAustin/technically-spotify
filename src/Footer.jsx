@@ -4,7 +4,7 @@ export default function Footer() {
     return (
       <footer className="w-full h-screen relative block p-4 py-16 border-t border-text-color">
      
-          <div id="footerLinks" className='flex flex-col justify-around gap-8 py-6'>
+          <div id="footerLinks" className='flex flex-col justify-around gap-6 py-6'>
             <ul id="company" className='py-2 flex flex-col gap-2 text-text-color'>
               <li>
                 <p className="font-bold text-page-white">Company</p>
@@ -32,7 +32,7 @@ export default function Footer() {
               <li className=''>Free Mobile App</li>
             </ul>
 
-            <ul id="socialLinks" className='flex justify-start items-center gap-2 py-4'>
+            <ul id="socialLinks" className='flex justify-start items-center gap-2 py-2'>
               <li>Instagram</li>
               <li>Twitter</li>
               <li>Github</li>

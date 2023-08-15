@@ -24,7 +24,7 @@ export default function ExpandedMenu(props) {
                 </div>
         
             <div id="userControls" className='w-full flex justify-between items-start gap-4 text-2xl'>
-                <div id="authenticate" className='h-full flex flex-col justify-around gap-4 items-start'>
+                <div id="authenticate" className='h-full flex flex-col justify-between gap-6 items-start'>
                     <p>Log in</p>
                     <p>Sign up</p>
                 </div>

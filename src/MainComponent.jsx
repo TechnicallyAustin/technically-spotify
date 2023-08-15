@@ -15,7 +15,7 @@ export default function MainComponent() {
 
           <section
             id="playlistContainer"
-            className=" w-screen h-48  flex justify-start gap-3  overflow-x-scroll no-scrollbar"
+            className=" w-screen h-48  flex justify-start items-center gap-3  overflow-x-auto no-scrollbar"
           >
             <MusicCard />
             <MusicCard />
@@ -31,7 +31,7 @@ export default function MainComponent() {
 
           <section
             id="focusContainer"
-            className=" w-screen h-48 flex justify-start gap-3 p-2  overflow-x-scroll no-scrollbar"
+            className=" w-screen h-48 flex justify-start items-center gap-3  overflow-x-auto no-scrollbar"
           >
             <FocusCard />
             <FocusCard />
@@ -45,7 +45,7 @@ export default function MainComponent() {
             <h2>Technically AudioBooks</h2>
           </header>
 
-          <section id="audiobookContainer" className="w-screen h-48 flex gap-3  justify-start overflow-x-scroll no-scrollbar">
+          <section id="audiobookContainer" className="w-screen h-48 flex gap-3  justify-start items-center overflow-x-auto no-scrollbar">
             <AudioBookCard />
             <AudioBookCard />
             <AudioBookCard />

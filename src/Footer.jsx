@@ -7,7 +7,7 @@ export default function Footer() {
           <div id="footerLinks" className='flex flex-col justify-around gap-8 py-6'>
             <ul id="company" className='py-2 flex flex-col gap-2'>
               <li>
-                <p classname="font-bold">Company</p>
+                <p className="font-bold">Company</p>
               </li>
               <li>About</li>
               <li>Jobs</li>
@@ -16,7 +16,7 @@ export default function Footer() {
 
             <ul id="communities" className='py-2'>
               <li>
-                <p classname="font-bold">Communities</p>
+                <p className="font-bold">Communities</p>
               </li>
               <li>Developers</li>
               <li>Advertising</li>

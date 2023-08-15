@@ -10,13 +10,13 @@ export default function Header() {
             </div>
 
             <nav className="flex justify-around items-cener">
-                <div id="searchIcon" className='p-2'>
+                <div id="searchIcon" className='p-2 flex justidy-center items-center'>
                     <SearchIcon />
                 </div>
-                <div id="button" className=' w-4/6 rounded-xl p-2'>
-                    <button className=' rounded-lg'>Actionable</button>
+                <div id="button" className='flex justify-center items-center w-4/6 rounded-xl p-2 px-4'>
+                    <button className='border rounded-lg px-6 py-1'>LI / SU</button>
                 </div>
-                <div id="menuIcon" className='p-2'>
+                <div id="menuIcon" className=' flex justify-center items-center p-2'>
                     <MenuIcon />
                 </div>
             </nav>

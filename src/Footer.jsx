@@ -2,21 +2,21 @@ import React from 'react'
 
 export default function Footer() {
     return (
-      <footer className="w-full h-screen relative block p-4 py-12">
+      <footer className="w-full h-screen relative block p-4 py-14 border-t border-text-color">
      
           <div id="footerLinks" className='flex flex-col justify-around gap-8 py-6'>
-            <ul id="company" className='py-2 flex flex-col gap-2'>
+            <ul id="company" className='py-2 flex flex-col gap-2 text-text-color'>
               <li>
-                <p className="font-bold">Company</p>
+                <p className="font-bold text-page-white">Company</p>
               </li>
               <li>About</li>
               <li>Jobs</li>
               <li>For the Record</li>
             </ul>
 
-            <ul id="communities" className='py-2'>
+            <ul id="communities" className='py-2 flex flex-col gap-2 text-text-color'>
               <li>
-                <p className="font-bold">Communities</p>
+                <p className="font-bold text-page-white">Communities</p>
               </li>
               <li>Developers</li>
               <li>Advertising</li>
@@ -24,9 +24,9 @@ export default function Footer() {
               <li>Vendors</li>
             </ul>
 
-            <ul id="usefulLinks" className='py-2 flex flex-col justify-around gap-2'>
+            <ul id="usefulLinks" className='py-2 flex flex-col justify-around gap-2 text-text-color'>
               <li className=''>
-                <p className="font-bold">Useful Links</p>
+                <p className="font-bold text-page-white">Useful Links</p>
               </li>
               <li className=''>Support</li>
               <li className=''>Free Mobile App</li>
@@ -52,15 +52,14 @@ export default function Footer() {
               <li className='pr-2 text-xs'>Your Privacy Choices</li>
             </ul>
 
+            <div id="copyright" className='w-full'>
+              <p>Copyright Info</p>
+            </div>
 
+            <div id="language" className='w-full'>
+              <button id="languageSelector" className='px-6 p-2 border rounded-3xl'>English</button>
+            </div>
 
-          <div id="copyright" className='w-full'>
-            <p>Copyright Info</p>
-          </div>
-
-          <div id="language" className='w-full'>
-            <button id="languageSelector" className='px-6 p-2 border rounded-3xl'>English</button>
-          </div>
           </div>
 
 

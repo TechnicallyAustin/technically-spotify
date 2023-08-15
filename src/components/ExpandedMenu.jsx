@@ -1,4 +1,5 @@
 import React from 'react'
+import CloseMenu from '../assets/CloseMenu';
 
 export default function ExpandedMenu(props) {
       const { toggle, status } = props;
@@ -16,11 +17,19 @@ export default function ExpandedMenu(props) {
       >
         <div
           id="expandedMenu"
-          className="w-full h-full shadow-lg z-10 p-6 bg-page-color text-text-color  fixed  border-b  left-0 top-20 flex flex-col justify-start gap-8 items-start"
-        >
-            <div id="userControls" className='w-full flex flex-col justify-around items-start gap-4 text-2xl'>
-                <p>Log in</p>
-                <p>Sign up</p>
+          className="w-full h-full shadow-lg z-10 p-6 bg-page-color text-text-color  fixed left-0 top-0 flex flex-col justify-start gap-8 items-start"
+          >
+                <div id="closeMenu" className='w-full flex justify-end items-center' onClick={toggle}>
+                     <CloseMenu  />
+                </div>
+        
+            <div id="userControls" className='w-full flex justify-between items-start gap-4 text-2xl'>
+                <div id="authenticate" className='h-full flex flex-col justify-around gap-4 items-start'>
+                    <p>Log in</p>
+                    <p>Sign up</p>
+                </div>
+
+
             </div>
                 
             <div id="pageBreak" className='w-full p-0.5 bg-text-color'></div>

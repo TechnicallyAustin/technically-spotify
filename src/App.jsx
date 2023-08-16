@@ -1,15 +1,17 @@
-import React from 'react'
-import "./App.css"
-import Header from './Header'
-import MainComponent from './MainComponent'
-import Footer from './Footer'
+import React from "react";
+import "./App.css";
+import Header from "./Header";
+import MainComponent from "./MainComponent";
+import Footer from "./Footer";
+import AccessTokenComponent from "./hooks/AccessTokenComponent";
+import PlaylistComponent from "./hooks/PlaylistsComponent.jsx";
 
 export default function App() {
-    return (
-        <div id="app" className='w-screen bg-page-color text-page-white'>
-            <Header />
-            <MainComponent />
-            <Footer />
-        </div>
-    )
+  return (
+    <div id="app" className="w-screen bg-page-color text-page-white">
+      <Header />
+      <MainComponent />
+      <Footer />
+    </div>
+  );
 }

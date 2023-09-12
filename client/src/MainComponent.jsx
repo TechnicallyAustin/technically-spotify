@@ -3,9 +3,7 @@ import Playlist from "./components/playlists/Playlist";
 import AudioBooks from "./components/audioBooks/AudioBooks";
 import Focus from "./components/focus/Focus";
 
-import GetAccessToken from "./hooks/AccessTokenComponent";
-import GetPlaylists from "./hooks/PlaylistsComponent.jsx";
-import AccessTokenComponent from "./hooks/AccessTokenComponent";
+
 
 export default function MainComponent() {
   return (
@@ -13,7 +11,6 @@ export default function MainComponent() {
       <Playlist />
       <Focus />
       <AudioBooks />
-      <AccessTokenComponent />
     </main>
   );
 }

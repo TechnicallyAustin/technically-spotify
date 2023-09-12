@@ -3,8 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import MainComponent from "./MainComponent";
 import Footer from "./Footer";
-import AccessTokenComponent from "./hooks/AccessTokenComponent";
-import PlaylistComponent from "./hooks/PlaylistsComponent.jsx";
+
 
 export default function App() {
   return (

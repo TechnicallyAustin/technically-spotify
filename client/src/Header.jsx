@@ -22,7 +22,7 @@ export default function Header() {
 
 
     return (
-      <header className=" w-full bg-page-color text-text-color shadow-xl w-screen fixed  top-0 left-0 right-0 flex justify-between items-center px-2 z-30">
+      <header className=" w-full h-16 bg-page-color text-text-color shadow-xl w-screen fixed  top-0 left-0 right-0 flex justify-between items-center px-2 z-30">
         <div id="logo" className="p-2">
           <div>T. Spotify</div>
         </div>

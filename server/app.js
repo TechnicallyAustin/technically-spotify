@@ -10,11 +10,15 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const User = require("./models/user");
+const {connectToDb} = require('./data/db/db.js')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const spotifyAuthRouter = require('./routes/auth');
+const localAuthRouter = require('./routes/localAuth');
 
 var app = express();
+connectToDb()
 app.use(session({secret: "session-secret", resave: false, saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
@@ -120,6 +124,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', spotifyAuthRouter)
+app.use('/', localAuthRouter);
 
 
 // catch 404 and forward to error handler

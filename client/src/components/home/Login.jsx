@@ -15,14 +15,14 @@ export default function Login() {
                   <label htmlFor="userName" name="usernameLabel">
                     Username:
                   </label>
-                  <input type="text" name="username" className="p-2 rounded" />
+                  <input required={true} type="text" name="username" className="p-2 rounded" />
                 </fieldset>
 
                 <fieldset id="usernameField" className='w-5/6 gap-2 flex flex-col'>
                   <label htmlFor="userName" name="usernameLabel">
                     Password:
                   </label>
-                  <input type="password" name="password" className="p-2 rounded" />
+                  <input required={true} type="password" name="password" className="p-2 rounded" />
                 </fieldset>
 
                 <button type="submit" className='p-2 rounded w-5/6 border bg-text-color text-page-color'>

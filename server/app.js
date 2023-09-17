@@ -11,6 +11,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const User = require("./models/user");
 const {connectToDb} = require('./data/db/db.js')
+const cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,6 +23,7 @@ connectToDb()
 app.use(session({secret: "session-secret", resave: false, saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors())
 
 // SPOTIFY API
   const clientID = process.env.CLIENT_ID

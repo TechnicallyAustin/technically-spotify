@@ -1,8 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from '../../Header';
 import Footer from '../../Footer';
+import axios from 'axios'
 
 export default function SignUp() {
+    const postSignupURL = "http://localhost:3000/admin/signup"
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const onSubmit = (e) => {
+        e.preventDefault()
+        axios.post(postSignupURL, data)
+        .then((response) => {
+            setData(response.data)
+            setLoading(false)
+        })
+        .catch( function (err)  {
+            console.error(err)
+            setLoading(false)
+        })
+    }
+
+    
     return (
       <>
         <Header />
@@ -12,7 +31,7 @@ export default function SignUp() {
           </h1>
 
           <form
-            action="/signup"
+            action="http://localhost:3000/admin/signup"
             method="POST"
             className="w-full flex flex-wrap  gap-2 justify-center items-center p-2"
           >
@@ -23,7 +42,7 @@ export default function SignUp() {
               <label htmlFor="first_name" name="firstNameLabel">
                 First Name:
               </label>
-              <input type="text" name="first_name" className="p-2 rounded" />
+              <input required={true} type="text" name="first_name" className="p-2 rounded" />
             </fieldset>
 
             <fieldset
@@ -33,21 +52,21 @@ export default function SignUp() {
               <label htmlFor="givenNameLabel" name="givenNameLabel">
                 Last Name:
               </label>
-              <input type="text" name="given_name" className="p-2 rounded" />
+              <input required={true} type="text" name="given_name" className="p-2 rounded" />
             </fieldset>
 
             <fieldset id="usernameField" className="w-5/6 gap-2 flex flex-col ">
               <label htmlFor="userName" name="usernameLabel">
                 Email:
               </label>
-              <input type="text" name="username" className="p-2 rounded" />
+              <input required={true} type="text" name="username" className="p-2 rounded" />
             </fieldset>
 
             <fieldset id="passwordField" className="w-5/6 gap-2 flex flex-col">
               <label htmlFor="password" name="passwordLabel">
                 Password:
               </label>
-              <input type="password" name="password" className="p-2 rounded" />
+              <input required={true} type="password" name="password" className="p-2 rounded" />
             </fieldset>
 
             <button

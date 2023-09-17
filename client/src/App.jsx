@@ -1,9 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import "./App.css";
-import Header from "./Header";
-import MainComponent from "./MainComponent";
-import Footer from "./Footer";
 import Profile from "./components/profile/Profile";
 import Home from "./components/home/Home";
 import Login from "./components/home/Login";

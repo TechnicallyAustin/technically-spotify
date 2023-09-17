@@ -2,6 +2,18 @@ const express = require('express');
 const router = express.Router()
 const asyncHandler = require("express-async-handler")
 
+exports.get_home = asyncHandler(async (req, res, next) => {
+  try {
+    console.log(req.user)
+    const user = req.user
+    res.status(200).json(user);
+  } catch {
+    (function (err) {
+      console.log(err);
+    });
+  }
+});
+
 exports.get_profile = asyncHandler(async(req, res, next) => {
 try{
     res.status(200).json("GET PROFILE Route Hit")

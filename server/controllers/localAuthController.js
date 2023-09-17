@@ -14,6 +14,7 @@ exports.get_local_signup = asyncHandler(async(req, res, next) => {
         console.error(err)
     }
 });
+
 exports.post_local_signup = asyncHandler(async (req, res, next) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10)
     try{
@@ -35,27 +36,28 @@ exports.post_local_signup = asyncHandler(async (req, res, next) => {
     }
 });
 
-exports.get_local_login = asyncHandler(async (req, res, next) => {
-  try {
-    res.send("Rendered by Client")
-  } catch (err) {
-    console.errer(err);
-  }
-});
+ exports.get_local_login = asyncHandler(async (req, res, next) => {
+   try {
+     res.send("Rendered by Client")
+   } catch (err) {
+     console.errer(err);
+   }
+ });
+
 exports.post_local_login = passport.authenticate("local", {
     failureRedirect: "/login", function(req, res) {
-        console.log("login failed");
+        console.log("login failed", req.body);
     },
-    successRedirect: "/"
+    successRedirect: "http://localhost:5173/"
 })
 
-exports.get_local_logout = asyncHandler(async (req, res, next) => {
-  try {
-    res.send("Rendered by Client");
-  } catch (err) {
-    console.errer(err);
-  }
-});
+ exports.get_local_logout = asyncHandler(async (req, res, next) => {
+   try {
+     res.send("Rendered by Client");
+   } catch (err) {
+     console.errer(err);
+   }
+ });
 
 exports.post_local_logout = (req, res) => {
   req.logout();

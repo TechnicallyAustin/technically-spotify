@@ -1,15 +1,68 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import CloseMenu from '../assets/CloseMenu';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 export default function ExpandedMenu(props) {
       const { toggle, status } = props;
+      const [user, setUser] = useState(null);
+      const [loading, setLoading] = useState(false)
       console.log("props", toggle);
 
       const handleClick = () => {
         toggle();
         console.log("Clicked");
       };
+
+      useEffect(() => {
+        const indexURL = "http://localhost:3000/user/home"
+        axios.get(indexURL)
+        .then((response) => {
+          console.log("USER", response.data)
+          setUser(response.data)
+          setLoading(false)
+        }).catch((err) => {
+          console.error('Error', err)
+          setLoading(false)
+        })
+      })
+
+        const LoggedInUser = () => {
+          return (
+            <>
+              <p>
+                <Link to="/profile">{user}</Link>
+              </p>
+              <p>
+                <Link to="/home">Home</Link>
+              </p>
+              <p>
+                <Link to="/logout">Logout</Link>
+              </p>
+            </>
+          );
+        }
+        
+
+        const LoggedOutUser = () => {
+          return (
+            <>
+              <p>
+                <Link to="/signup">Sign up</Link>
+              </p>
+              <p>
+                <Link to="/login">Log in</Link>
+              </p>
+              <p>
+                <Link to="/home">Home</Link>
+              </p>
+            </>
+          );
+        }
+      
+
+
+
 
     return (
       <nav id="expandedNav" className="flex  justify-start items-start text-lg">
@@ -33,15 +86,7 @@ export default function ExpandedMenu(props) {
               id="authenticate"
               className="h-full flex flex-col justify-between gap-6 items-start"
             >
-              <p>
-                <Link to="/login">Log in</Link>
-              </p>
-              <p>
-                <Link to="/signup">Sign up</Link>
-              </p>
-              <p>
-                <Link to="/home">Home</Link>
-              </p>
+              {user ? <LoggedInUser /> : <LoggedOutUser username={user}/>}
             </div>
           </div>
 

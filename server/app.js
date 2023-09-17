@@ -10,7 +10,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const User = require("./models/user");
-const {connectToDb} = require('./data/db/db.js')
+const {connectToDb, getUsersCollection} = require('./data/db/db.js')
 const cors = require('cors')
 
 var indexRouter = require('./routes/index');
@@ -125,7 +125,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   // }
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 app.use('/', spotifyAuthRouter)
 app.use('/', localAuthRouter);
 

@@ -1,7 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import MusicCard from './MusicCard';
 
 export default function Playlist() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(null);
+
+  useEffect(() => {
+
+  })
+
+
+
+
+
     return (
       <section id="playlists" className=" w-full flex flex-col gap-2">
         <header className='text-page-white'>

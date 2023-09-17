@@ -3,6 +3,7 @@ import MenuIcon from './assets/MenuIcon'
 import SearchIcon from './assets/SearchIcon'
 import ExpandedMenu from './components/ExpandedMenu'
 import ExpandSearch from './components/search/ExpandSearch';
+import {Link} from 'react-router-dom'
 
 
 export default function Header() {
@@ -24,7 +25,9 @@ export default function Header() {
     return (
       <header className=" w-full h-16 bg-page-color text-text-color shadow-xl w-screen fixed  top-0 left-0 right-0 flex justify-between items-center px-2 z-30">
         <div id="logo" className="p-2">
-          <div>T. Spotify</div>
+          <Link to='/'>
+            <p>T. Spotify</p>
+            </Link>
         </div>
 
         <nav className="flex justify-between items-cener">

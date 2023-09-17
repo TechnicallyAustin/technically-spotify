@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Search() {
+export default function Profile() {
     return (
         <div>
-            Search Component
+            Profile component
         </div>
     )
 }

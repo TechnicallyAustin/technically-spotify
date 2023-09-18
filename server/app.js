@@ -19,11 +19,11 @@ const spotifyAuthRouter = require('./routes/auth');
 const localAuthRouter = require('./routes/localAuth');
 
 var app = express();
+app.use(cors())
 connectToDb()
 app.use(session({secret: "session-secret", resave: false, saveUninitialized: true}))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors())
 
 // SPOTIFY API
   const clientID = process.env.CLIENT_ID
@@ -124,8 +124,8 @@ app.use(express.static(path.join(__dirname, 'public')));
   //   }
   // }
 
+app.use('/user', usersRouter);
 app.use('/', indexRouter);
-app.use('/', usersRouter);
 app.use('/', spotifyAuthRouter)
 app.use('/', localAuthRouter);
 

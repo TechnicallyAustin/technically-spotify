@@ -6,8 +6,7 @@ import axios from 'axios'
 export default function ExpandedMenu(props) {
       const { toggle, status } = props;
       const [user, setUser] = useState(null);
-      const [loading, setLoading] = useState(false)
-      console.log("props", toggle);
+      const [loading, setLoading] = useState(true)
 
       const handleClick = () => {
         toggle();
@@ -15,17 +14,18 @@ export default function ExpandedMenu(props) {
       };
 
       useEffect(() => {
-        const indexURL = "http://localhost:3000/user/home"
-        axios.get(indexURL)
+        const homeURL = "http://localhost:3000/user/home";
+        axios.get(homeURL)
         .then((response) => {
-          console.log("USER", response.data)
+          console.log("USER", response)
           setUser(response.data)
           setLoading(false)
         }).catch((err) => {
           console.error('Error', err)
           setLoading(false)
         })
-      })
+      },[])
+
 
         const LoggedInUser = () => {
           return (

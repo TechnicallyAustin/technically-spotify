@@ -9,5 +9,7 @@ Tasklist
 
 [ ] write a UseEffect hoom to fetch backend URL for specific componentsgi
 =======
-[ ] Design search page to mimic sportify closer
->>>>>>> 44f2d7028da359073d134e883dd9f81cf73a7747
+[ ] Design search page to mimic spotify closer
+>>>>>>> 44f2d7028da3
+
+[ ] expand on user profile

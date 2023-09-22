@@ -124,7 +124,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   //   }
   // }
 
-app.use('/user', usersRouter);
+app.use('/', usersRouter);
 app.use('/', indexRouter);
 app.use('/', spotifyAuthRouter)
 app.use('/', localAuthRouter);

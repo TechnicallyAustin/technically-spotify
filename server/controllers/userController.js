@@ -1,23 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
-const { getUsersCollection } = require("../data/db/db");
+const {getUsersCollection}  = require("../data/db/db");
+const User = require('../models/user');
 
 exports.get_home = asyncHandler(async (req, res, next) => {
   try {
-    const user = await getUsersCollection().findOne({ username: req.user });
-    if(user){
-        res.status(200).json(user);
-    }
-    if (!user) {
-      return res.status(404).json({ error: "User not found" }); // Return an error response
-    }
-  } catch (err) {
-    console.error(err);
-    // Handle other errors, such as database connection issues, with a 500 internal server error
-    res.status(500).json({ error: "Internal server error" });
+    console.log(req.isAuthenticated())
+    const user =  await getUsersCollection().findOne({username: req.user})
+
+
+    //res.status(200).json(user.username);
   }
-});
+  catch (err){
+    console.error(err)
+  }
+})
 
 exports.get_profile = asyncHandler(async (req, res, next) => {
   try {

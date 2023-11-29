@@ -17,6 +17,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const spotifyAuthRouter = require('./routes/auth');
 const localAuthRouter = require('./routes/localAuth');
+const playlistRouter = require('./routes/playlist')
 
 var app = express();
 app.use(cors())
@@ -25,30 +26,8 @@ app.use(session({secret: "session-secret", resave: false, saveUninitialized: tru
 app.use(passport.initialize());
 app.use(passport.session());
 
-// SPOTIFY API
-  const clientID = process.env.CLIENT_ID
-  const clientSecret = process.env.CLIENT_SECRET
-  const responseType = process.env.RESPONSE_TYPE
-  const redirectURI = process.env.REDIRECT_URI
-  const query = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=code&redirect_uri=${redirectURI}&scope=user-top-read`
 
-
-// PASSPORT SPOTIFY Strategy
-const SpotifyStrategy = require("passport-spotify").Strategy;
-passport.use(
-  new SpotifyStrategy(
-    {
-      clientID: clientID,
-      clientSecret: clientSecret,
-      callbackURL: "http://localhost:8888/auth/spotify/callback",
-    },
-    function (accessToken, refreshToken, expires_in, profile, done) {
-      User.findOrCreate({ spotifyId: profile.id }, function (err, user) {
-        return done(err, user);
-      });
-    }
-  )
-);
+ 
 
 
 // PASSPORT LOCAL STRATEGY
@@ -128,6 +107,7 @@ app.use('/', usersRouter);
 app.use('/', indexRouter);
 app.use('/', spotifyAuthRouter)
 app.use('/', localAuthRouter);
+app.use('/', playlistRouter);
 
 
 // catch 404 and forward to error handler

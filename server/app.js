@@ -18,6 +18,8 @@ var usersRouter = require('./routes/users');
 const spotifyAuthRouter = require('./routes/auth');
 const localAuthRouter = require('./routes/localAuth');
 const playlistRouter = require('./routes/playlist')
+const albumRouter = require('./routes/album');
+const categoryRouter = require('./routes/category');
 
 var app = express();
 app.use(cors())
@@ -108,6 +110,8 @@ app.use('/', indexRouter);
 app.use('/', spotifyAuthRouter)
 app.use('/', localAuthRouter);
 app.use('/', playlistRouter);
+app.use('/', albumRouter);
+app.use('/', categoryRouter);
 
 
 // catch 404 and forward to error handler

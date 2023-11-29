@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import MusicCard from "./MusicCard";
-import axios from "axios";
 
-export default function Playlist() {
+import axios from "axios";
+import RecCard from "./AlbumCard";
+import AlbumCard from "./AlbumCard";
+
+export default function Albums() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(null);
-  const [playlistItems, setPlaylistItems] = useState([]);
+  const [albums, setAlbums] = useState([]);
 
-  const getPlaylists = async () => {
+  const getAlbums = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/playlists/");
+      const response = await axios.get("http://localhost:3000/albums/");
       setData(response.data);
       return response.data;
     } catch (err) {
@@ -22,11 +24,12 @@ export default function Playlist() {
     (async () => {
       try {
         setLoading(true);
-        const result = await getPlaylists();
+        const result = await getAlbums();
         setLoading(false);
+        console.log(result.albums);
 
-        if (result.playlists.items) {
-          setPlaylistItems(result.playlists.items);
+        if (result.albums.items) {
+          setAlbums(result.albums.items);
         }
       } catch (error) {
         setLoading(false);
@@ -37,17 +40,22 @@ export default function Playlist() {
   }, []);
 
   return (
-    <section id="playlists" className="w-full flex flex-col gap-2">
+    <section id="albums" className="w-full flex flex-col gap-2">
       <header className="text-page-white">
-        <h2>Technically Playlists</h2>
+        <h2>Technically Albums</h2>
       </header>
 
       <section
-        id="playlistContainer"
+        id="albumContainer"
         className="flex justify-start items-center gap-3  overflow-x-scroll no-scrollbar"
       >
-        {playlistItems.map((item, index) => (
-          <MusicCard key={index}  name={item.name} image={item.images[0].url} tracks={item.tracks} description={item.description}  />
+        {albums.map((item, index) => (
+          <AlbumCard
+            key={index}
+            name={item.name}
+            image={item.images[0].url}
+            id={item.id}
+          />
         ))}
       </section>
     </section>

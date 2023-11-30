@@ -7,6 +7,7 @@ export default function Playlist() {
   const [loading, setLoading] = useState(null);
   const [playlistItems, setPlaylistItems] = useState([]);
 
+
   const getPlaylists = async () => {
     try {
       const response = await axios.get("http://localhost:3000/playlists/");
@@ -24,6 +25,7 @@ export default function Playlist() {
         setLoading(true);
         const result = await getPlaylists();
         setLoading(false);
+        console.log(result)
 
         if (result.playlists.items) {
           setPlaylistItems(result.playlists.items);
@@ -36,6 +38,8 @@ export default function Playlist() {
     })();
   }, []);
 
+  
+
   return (
     <section id="playlists" className="w-full flex flex-col gap-2">
       <header className="text-page-white">
@@ -47,7 +51,7 @@ export default function Playlist() {
         className="flex justify-start items-center gap-3  overflow-x-scroll no-scrollbar"
       >
         {playlistItems.map((item, index) => (
-          <MusicCard key={index}  name={item.name} image={item.images[0].url} tracks={item.tracks} description={item.description}  />
+          <MusicCard key={index}  name={item.name} image={item.images[0].url} tracksEndpoint={item.tracks.href} description={item.description}  />
         ))}
       </section>
     </section>

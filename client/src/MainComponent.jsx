@@ -2,7 +2,7 @@ import React from "react";
 import Playlist from "./components/playlists/Playlist";
 
 import Category from "./components/categories/Category";
-import Recommendations from "./components/recommendations/Album";
+import Recommendations from "./components/albums/Album";
 
 
 

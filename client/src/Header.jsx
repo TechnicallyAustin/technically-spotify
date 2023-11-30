@@ -23,6 +23,7 @@ export default function Header() {
 
 
     return (
+      <>
       <header className=" w-full h-16 bg-page-color text-text-color shadow-xl w-screen fixed  top-0 left-0 right-0 flex justify-between items-center px-2 z-30">
         <div id="logo" className="p-2">
           <Link to='/'>
@@ -39,18 +40,19 @@ export default function Header() {
               <SearchIcon />
             </button>
               
-            {search && <ExpandSearch />}
           </div>
 
           <div
             id="menuIcon"
             className=" flex justify-center items-center p-2"
             onClick={toggleMenu}
-          >
+            >
             <MenuIcon />
           </div>
           {menu && <ExpandedMenu toggle={toggleMenu} status={menu} />}
         </nav>
       </header>
+            {search && <ExpandSearch />}
+      </>
     );
 }

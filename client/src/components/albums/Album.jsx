@@ -11,7 +11,8 @@ export default function Albums() {
 
   const getAlbums = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/albums/");
+      const response = await axios.get("https://technically-spotify-server.vercel.app/albums/"
+      );
       setData(response.data);
       return response.data;
     } catch (err) {

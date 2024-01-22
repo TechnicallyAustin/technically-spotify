@@ -18,7 +18,7 @@ export default function AlbumCard(props) {
           className="w-full h-full aspect-square rounded-lg "
         />
         <figcaption className="w-full flex justify-start items-end">
-          <p className="text-sm">{name}</p>
+          <p className="text">{name}</p>
         </figcaption>
       </figure>
     </article>
